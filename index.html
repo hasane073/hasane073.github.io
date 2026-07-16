@@ -167,3 +167,128 @@
                 <div class="bg-gray-900/50 border border-gray-900 p-4 rounded-xl space-y-2">
                     <h4 class="text-xs font-bold text-gray-400 font-mono uppercase tracking-wider">Production Heatmap & Dashboard Control</h4>
                     <div class="h-[350px] md:h-[450px] lg:h-[520px] w-full bg-gray-950 rounded-lg overflow-hidden border border-gray-900 flex items-center justify-center p-2">
+                        <img src="solarx_dash.png" alt="SolarX Dashboard Heatmap" class="object-contain w-full h-full hover:scale-[1.02] transition duration-300">
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid lg:grid-cols-12 gap-8 bg-gray-900/20 border border-gray-900 p-6 rounded-2xl">
+                <div class="lg:col-span-8 space-y-4">
+                    <h4 class="text-lg font-bold text-white tracking-wide">Technical Design Specifications</h4>
+                    <p class="text-sm text-gray-400 leading-relaxed">
+                        Typical solar tracking platforms blindly orient toward the brightest light, risking excessive mechanical jitter, high cable strain, and battery drain under unstable skies. SolarX introduces a high-level, energy-aware supervisory AI dashboard that acts on top of a deterministic real-time firmware layer.
+                    </p>
+                    <ul class="space-y-3 text-xs text-gray-300 list-disc pl-5">
+                        <li><strong>Low-Level Execution:</strong> An Arduino Nano reads analog levels from four-corner LDR sensor dividers, calculating left-right and top-bottom gradients to adjust horizontal and vertical hobby servo angles within a calibrated safe physical range of 75° to 105°.</li>
+                        <li><strong>Corrected Light Scoring:</strong> Due to inverted resistor characteristics of the physical LDR voltage divider, the supervisory layer converts the raw average light readings to true, linear brightness:
+                            <div class="my-3 text-center font-mono text-sm text-amber-400 font-bold bg-gray-950 py-2 rounded-lg border border-gray-900">
+                                B = 1023 - avgLight
+                            </div>
+                        </li>
+                        <li><strong>AI Autopilot & Net Energy Optimizer:</strong> Compares optical yield expectations directly with actuator stress metrics. The supervisor computes movement costs, cable-strain fatigue, and shadow risks before deciding to issue commands:
+                            <div class="my-3 text-center font-mono text-sm text-amber-400 font-bold bg-gray-950 py-2 rounded-lg border border-gray-900">
+                                Net Benefit = Expected Light Gain - Movement Cost
+                            </div>
+                        </li>
+                        <li><strong>Cable-Safe AI Scan:</strong> Initiates a structured 3x3 sweep over safe 82°, 90°, and 98° grid intersections, displaying an instant 2D brightness heatmap and executing a closed-loop positioning return to the absolute optimal coordinate.</li>
+                    </ul>
+                </div>
+                <div class="lg:col-span-4 bg-gray-950 p-6 rounded-xl border border-gray-900 flex flex-col justify-between">
+                    <div class="space-y-4">
+                        <h5 class="text-xs font-bold text-gray-400 font-mono uppercase tracking-widest">Control Protocol Commands</h5>
+                        <div class="space-y-2 text-xs font-mono text-gray-300">
+                            <p class="border-b border-gray-900 pb-1"><strong class="text-amber-400">AUTO:</strong> Classical closed-loop LDR-based tracking.</p>
+                            <p class="border-b border-gray-900 pb-1"><strong class="text-amber-400">STOP:</strong> Forces active hold, keeping serial telemetry streaming.</p>
+                            <p class="border-b border-gray-900 pb-1"><strong class="text-amber-400">CENTER:</strong> Sweeps both servos instantly to reference 90°.</p>
+                            <p class="border-b border-gray-900 pb-1"><strong class="text-amber-400">AI AUTOPILOT:</strong> Enables supervisor energy optimizations.</p>
+                            <p class="border-b border-gray-900 pb-1"><strong class="text-amber-400">GOTO,H,V:</strong> Positions actuators to requested coordinates.</p>
+                        </div>
+                    </div>
+                    <div class="pt-4 border-t border-gray-900 text-[10px] text-gray-500 font-mono">Telemetry serialized via JSON and transferred at 115200 baud.</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="space-y-6 border-t border-gray-900 pt-12">
+            <div class="flex items-center gap-3">
+                <span class="bg-cyan-500/10 text-cyan-400 p-2 rounded-lg border border-cyan-500/20">
+                    <i class="fa-solid fa-vial-virus text-xl"></i>
+                </span>
+                <div>
+                    <h3 class="text-2xl font-bold text-white">3. Professional USB-UART & ST-Link V2.1 Debugger</h3>
+                    <p class="text-sm text-gray-400 font-mono">Multi-Layer Hardware Debug Module featuring PNP Software Re-Enumeration</p>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="bg-gray-900/50 border border-gray-900 p-6 rounded-xl space-y-2">
+                    <h4 class="text-xs font-bold text-gray-400 font-mono uppercase tracking-wider">FT232RL Schematic Layer</h4>
+                    <div class="h-[350px] md:h-[450px] lg:h-[520px] w-full bg-gray-950 rounded-lg overflow-hidden border border-gray-900 flex items-center justify-center p-2">
+                        <img src="debugger_ft232.png" alt="FT232RL Schematic" class="object-contain w-full h-full hover:scale-[1.02] transition duration-300">
+                    </div>
+                </div>
+                <div class="bg-gray-900/50 border border-gray-900 p-6 rounded-xl space-y-2">
+                    <h4 class="text-xs font-bold text-gray-400 font-mono uppercase tracking-wider">STM32 ST-Link Core</h4>
+                    <div class="h-[350px] md:h-[450px] lg:h-[520px] w-full bg-gray-950 rounded-lg overflow-hidden border border-gray-900 flex items-center justify-center p-2">
+                        <img src="debugger_stlink.png" alt="STM32 ST-Link Schematic" class="object-contain w-full h-full hover:scale-[1.02] transition duration-300">
+                    </div>
+                </div>
+                <div class="bg-gray-900/50 border border-gray-900 p-6 rounded-xl space-y-2">
+                    <h4 class="text-xs font-bold text-cyan-400 font-mono uppercase tracking-wider">2D PCB Routing Layout (KiCad)</h4>
+                    <div class="h-[350px] md:h-[450px] lg:h-[520px] w-full bg-gray-950 rounded-lg overflow-hidden border border-gray-900 flex items-center justify-center p-2">
+                        <img src="pcb.png" alt="PCB Layout Routing" class="object-contain w-full h-full hover:scale-[1.02] transition duration-300">
+                    </div>
+                </div>
+                <div class="bg-gray-900/50 border border-gray-900 p-6 rounded-xl space-y-2">
+                    <h4 class="text-xs font-bold text-cyan-400 font-mono uppercase tracking-wider">3D PCB Physical Render (KiCad)</h4>
+                    <div class="h-[350px] md:h-[450px] lg:h-[520px] w-full bg-gray-950 rounded-lg overflow-hidden border border-gray-900 flex items-center justify-center p-2">
+                        <img src="3d.png" alt="PCB 3D Render" class="object-contain w-full h-full hover:scale-[1.02] transition duration-300">
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid lg:grid-cols-12 gap-8 bg-gray-900/20 border border-gray-900 p-6 rounded-2xl">
+                <div class="lg:col-span-8 space-y-4">
+                    <h4 class="text-lg font-bold text-white tracking-wide">Technical Design Specifications</h4>
+                    <p class="text-sm text-gray-400 leading-relaxed">
+                        An advanced, production-grade R&D engineering debug tool integrating dual high-speed protocol interfaces on a single PCB layout. The board combines an industry-standard serial link with a dedicated flashing and trace debugger core.
+                    </p>
+                    <ul class="space-y-3 text-xs text-gray-300 list-disc pl-5">
+                        <li><strong>USB-UART Layer (FT232RL):</strong> Engineered around the industrial FT232RL (U1) USB bridge chip. Includes a physical jumper (JP1) for manual VCCIO selection (3.3V or 5V) to match target system logic. The Micro USB input (J1) power rail integrates 10µF (C5) and 100nF (C1) filtering capacitors to suppress voltage ripple. CBUS0 and CBUS1 lines route directly to TX/RX status LEDs (D2, D3), and full hardware flow control signals (RTS, CTS, DTR, DSR, DCD, RI) are exposed to output headers (J2, J3, J4).</li>
+                        <li><strong>ST-Link V2.1 Layer (STM32F103C8T6):</strong> Employs an STM32F103C8T6 (U4) ARM Cortex-M3 microcontroller. Features an integrated USB Type-C connector (J5) with 5.1kΩ pull-down resistors (R5, R6) on CC1 and CC2 lines to signal sink device behavior and negotiate safe 5V power routing.</li>
+                        <li><strong>USB Re-Enumeration Subsystem:</strong> Avoids manual cable detachment during intense flashing loops. The design incorporates a PNP transistor (Q2) configured to toggle the 1.5kΩ pull-up resistor (R14) on the USB D+ line, dynamically driven via the STM32's PA15 (RENUM) pin.</li>
+                        <li><strong>Power & Output Interfaces:</strong> Clock frequency is driven by an 8 MHz crystal (Y1) with standard 20pF load capacitors (C11, C12). Power protection features a MOSFET (Q1) and a protection diode (D4) on the VBUS line for reverse polarity and overcurrent protection, regulated down to 3.3V via an LM1117-3.3V (U3) LDO with 10µF (C4, C8) stabilizing caps. The J7 SWD programming header exposes SWCLK, SWDIO, NRST, SWO (Serial Wire Output) for tracing, and UART target lines (TX/RX).</li>
+                    </ul>
+                </div>
+                <div class="lg:col-span-4 bg-gray-950 p-6 rounded-xl border border-gray-900 flex flex-col justify-between">
+                    <div class="space-y-4">
+                        <h5 class="text-xs font-bold text-gray-400 font-mono uppercase tracking-widest">Hardware Architecture Specs</h5>
+                        <div class="space-y-2 text-xs text-gray-300 font-mono">
+                            <p class="border-b border-gray-900 pb-1"><strong>Filtering Caps:</strong> 10µF (C5) & 100nF (C1) on USB Input.</p>
+                            <p class="border-b border-gray-900 pb-1"><strong>Pull-Down Resistors:</strong> R5, R6 (5.1kΩ) on Type-C CC1/CC2.</p>
+                            <p class="border-b border-gray-900 pb-1"><strong>Re-Enumeration:</strong> R14 (1.5kΩ) switched via Q2 (PA15).</p>
+                            <p class="border-b border-gray-900 pb-1"><strong>Protection Array:</strong> MOSFET (Q1) & Protection Diode (D4).</p>
+                            <p class="border-b border-gray-900 pb-1"><strong>Voltage Regulation:</strong> LM1117-3.3V (U3) LDO with 10µF (C4, C8).</p>
+                        </div>
+                    </div>
+                    <div class="pt-4 border-t border-gray-900 text-[10px] text-gray-500 font-mono">Designed, routed, and validated in KiCad.</div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-gray-950 border-t border-gray-900 py-12">
+        <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6 text-sm text-gray-500 font-mono">
+            <div>
+                <p>&copy; 2026 Hasan Emre Çelik. All engineering designs and documentation are self-produced.</p>
+            </div>
+            <div class="flex gap-4">
+                <a href="https://github.com/hasane073" class="hover:text-white transition"><i class="fa-brands fa-github text-lg"></i></a>
+                <a href="mailto:hasane073@gmail.com" class="hover:text-white transition"><i class="fa-solid fa-envelope text-lg"></i></a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
