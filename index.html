@@ -6,6 +6,9 @@
     <title>Hasan Emre Çelik - Engineering Portfolio</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js" onload="renderMathInElement(document.body);"></script>
     <script>
         tailwind.config = {
             darkMode: 'class',
@@ -14,10 +17,10 @@
                     colors: {
                         brand: {
                             dark: '#030712',
-                            card: '#1f2937',
-                            border: '#374151',
-                            accentBlue: '#06b6d4',
-                            accentGreen: '#10b981',
+                            card: '#111827',
+                            border: '#1f2937',
+                            accentCyan: '#06b6d4',
+                            accentEmerald: '#10b981',
                             accentAmber: '#f59e0b'
                         }
                     }
@@ -26,9 +29,9 @@
         }
     </script>
 </head>
-<body class="bg-gray-950 text-gray-100 font-sans min-h-screen">
+<body class="bg-gray-950 text-gray-100 font-sans min-h-screen selection:bg-cyan-500/30 selection:text-cyan-200">
 
-    <header class="border-b border-gray-800 bg-gray-900/80 backdrop-blur sticky top-0 z-50">
+    <header class="border-b border-gray-900 bg-gray-950/80 backdrop-blur sticky top-0 z-50">
         <div class="max-w-7xl mx-auto px-6 py-4 flex flex-col md:flex-row justify-between items-center gap-4">
             <div class="flex items-center gap-3">
                 <div class="bg-cyan-500/10 p-2 rounded-lg border border-cyan-500/30">
@@ -36,277 +39,248 @@
                 </div>
                 <div>
                     <h1 class="text-lg font-bold tracking-wider text-white">HASAN EMRE ÇELİK</h1>
-                    <p class="text-xs text-gray-400">Electrical-Electronics Engineer</p>
+                    <p class="text-xs text-cyan-400 font-mono">Electrical-Electronics Engineer | Embedded Systems & AI</p>
                 </div>
             </div>
-            <div class="flex gap-4 text-sm">
-                <a href="mailto:hasanemrecelik.ee@gmail.com" class="bg-gray-800 hover:bg-gray-700 px-4 py-2 rounded-lg transition border border-gray-700 flex items-center gap-2">
-                    <i class="fa-solid fa-envelope"></i> Contact
+            <div class="flex gap-4 text-sm font-mono">
+                <a href="mailto:hasanemrecelik.ee@gmail.com" class="bg-gray-900 hover:bg-gray-850 px-4 py-2 rounded-lg transition border border-gray-800 flex items-center gap-2 text-gray-300 hover:text-white">
+                    <i class="fa-solid fa-envelope"></i> hasanemrecelik.ee@gmail.com
                 </a>
             </div>
         </div>
     </header>
 
-    <main class="max-w-7xl mx-auto px-6 py-12 space-y-16">
+    <main class="max-w-7xl mx-auto px-6 py-12 space-y-20">
 
-        <section class="grid md:grid-cols-3 gap-8 items-center bg-gray-900 border border-gray-800 p-8 rounded-2xl relative overflow-hidden">
-            <div class="absolute inset-0 bg-gradient-to-r from-cyan-500/10 via-transparent to-transparent pointer-events-none"></div>
+        <section class="grid md:grid-cols-3 gap-8 items-center bg-gray-900/40 border border-gray-900 p-8 rounded-2xl relative overflow-hidden">
+            <div class="absolute inset-0 bg-gradient-to-r from-cyan-500/5 via-transparent to-transparent pointer-events-none"></div>
             <div class="md:col-span-2 space-y-4 relative">
-                <span class="bg-cyan-500/10 text-cyan-400 border border-cyan-500/20 px-3 py-1 rounded-full text-xs font-semibold">PORTFOLIO & LIVE SYSTEM PREVIEWS</span>
-                <h2 class="text-3xl md:text-4xl font-extrabold text-white">Hi, I'm Hasan. I build Cyber-Physical Systems.</h2>
+                <span class="bg-cyan-500/10 text-cyan-400 border border-cyan-500/20 px-3 py-1 rounded-full text-xs font-mono font-semibold">GRADUATION PORTFOLIO & TECHNICAL DOCUMENTATION</span>
+                <h2 class="text-3xl md:text-4xl font-extrabold text-white tracking-tight">Bridging Physical Layer Realities with Intelligent Control</h2>
                 <p class="text-gray-400 text-sm md:text-base leading-relaxed">
-                    Graduate in Electrical and Electronics Engineering from Altınbaş University. I specialize in embedded firmware architecture, professional PCB layout routing, and adaptive AI control networks. Below are my major engineering developments featuring interactive simulated control interfaces.
+                    Electrical and Electronics Engineering graduate from Altınbaş University. This portfolio serves as an interactive, production-ready showcase of my graduation projects and industrial R&D board designs. No simulated mockups—only raw schematics, system topologies, and dashboard previews from actual functional prototypes.
                 </p>
             </div>
-            <div class="bg-gray-950 border border-gray-800 p-6 rounded-xl space-y-4">
-                <h4 class="text-sm font-bold text-gray-300 border-b border-gray-800 pb-2">Technical Core Stack</h4>
-                <div class="flex flex-wrap gap-2">
-                    <span class="bg-gray-800 text-gray-300 px-2 py-1 rounded text-xs">KiCad EDA</span>
-                    <span class="bg-gray-800 text-gray-300 px-2 py-1 rounded text-xs">STM32 (Cortex-M)</span>
-                    <span class="bg-gray-800 text-gray-300 px-2 py-1 rounded text-xs">ESP32 & Arduino</span>
-                    <span class="bg-gray-800 text-gray-300 px-2 py-1 rounded text-xs">TinyML (Edge Impulse)</span>
-                    <span class="bg-gray-800 text-gray-300 px-2 py-1 rounded text-xs">Dockerization</span>
-                    <span class="bg-gray-800 text-gray-300 px-2 py-1 rounded text-xs">Python & Streamlit</span>
+            <div class="bg-gray-950 border border-gray-900 p-6 rounded-xl space-y-4">
+                <h4 class="text-xs font-bold text-gray-400 border-b border-gray-900 pb-2 tracking-widest uppercase font-mono">Core Tech Spectrum</h4>
+                <div class="flex flex-wrap gap-2 font-mono">
+                    <span class="bg-gray-900 text-cyan-400 border border-gray-800 px-2 py-1 rounded text-xs">KiCad EDA</span>
+                    <span class="bg-gray-900 text-cyan-400 border border-gray-800 px-2 py-1 rounded text-xs">STM32 ARM Cortex</span>
+                    <span class="bg-gray-900 text-cyan-400 border border-gray-800 px-2 py-1 rounded text-xs">ESP32 (Dual-Core)</span>
+                    <span class="bg-gray-900 text-cyan-400 border border-gray-800 px-2 py-1 rounded text-xs">TinyML / Edge Impulse</span>
+                    <span class="bg-gray-900 text-cyan-400 border border-gray-800 px-2 py-1 rounded text-xs">Dockerization</span>
+                    <span class="bg-gray-900 text-cyan-400 border border-gray-800 px-2 py-1 rounded text-xs">Flask & Streamlit</span>
                 </div>
             </div>
         </section>
 
-        <section class="space-y-6">
+        <section class="space-y-6 border-t border-gray-900 pt-12">
             <div class="flex items-center gap-3">
                 <span class="bg-emerald-500/10 text-emerald-400 p-2 rounded-lg border border-emerald-500/20">
                     <i class="fa-solid fa-shield-halved text-xl"></i>
                 </span>
                 <div>
-                    <h3 class="text-2xl font-bold text-white">1. PLUG SENSE: AI-Powered USB Fingerprinting & NILM 🛡️</h3>
-                    <p class="text-sm text-gray-400">Security layer defending endpoints against BadUSB hardware attacks via side-channel analysis.</p>
+                    <h3 class="text-2xl font-bold text-white">1. PLUG SENSE: TinyML USB Fingerprinting & Anomaly Detection [cite: 5]</h3>
+                    <p class="text-sm text-gray-400 font-mono">Side-Channel Power Analysis for Non-Intrusive Load Monitoring (NILM) [cite: 5, 33]</p>
                 </div>
             </div>
 
-            <div class="grid lg:grid-cols-12 gap-8">
-                <div class="lg:col-span-5 bg-gray-900 border border-gray-800 p-6 rounded-xl flex flex-col justify-between space-y-6">
-                    <div class="space-y-4">
-                        <p class="text-gray-300 text-sm leading-relaxed">
-                            Traditional cybersecurity cannot detect spoofed digital IDs (VID/PID) on connected devices. **PLUG SENSE** solves this by shifting validation to the physical layer. By sampling the transient DC current drawn through a customized isolated sensor, it maps out hardware footprints and classifies devices using an embedded AI inference pipeline.
-                        </p>
-                        <div class="border-l-2 border-emerald-500 pl-4 py-1 text-xs text-gray-400 space-y-1">
-                            <p><strong>Hardware:</strong> ESP32, ACS712-05B Current Sensor, 12-bit Analog-to-Digital Converter.</p>
-                            <p><strong>Software Architecture:</strong> Dockerized Backend Engine, Streamlit UI Dashboard, Python REST API.</p>
-                        </div>
-                    </div>
-                    <div class="grid grid-cols-2 gap-4 pt-4 border-t border-gray-800 text-center">
-                        <div>
-                            <div class="text-xs text-gray-500">SAMPLING RATE</div>
-                            <div class="text-lg font-bold text-emerald-400">10 Hz</div>
-                        </div>
-                        <div>
-                            <div class="text-xs text-gray-500">ISOLATION</div>
-                            <div class="text-lg font-bold text-emerald-400">2.1 kVRMS</div>
-                        </div>
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="bg-gray-900/50 border border-gray-900 p-4 rounded-xl space-y-2">
+                    <h4 class="text-xs font-bold text-gray-500 font-mono uppercase tracking-wider">System Flow Topology [cite: 153]</h4>
+                    <div class="aspect-video bg-gray-950 rounded-lg overflow-hidden border border-gray-900 flex items-center justify-center">
+                        <img src="plugsense_block.png" alt="Plug Sense Block Diagram" class="object-contain w-full h-full hover:scale-105 transition duration-300">
                     </div>
                 </div>
-
-                <div class="lg:col-span-7 bg-gray-900 border border-emerald-500/30 p-6 rounded-xl relative">
-                    <div class="absolute top-4 right-4 flex items-center gap-2">
-                        <span class="w-2 h-2 rounded-full bg-emerald-500 animate-ping"></span>
-                        <span class="text-[10px] tracking-wider text-emerald-400 font-bold uppercase">LIVE SIMULATOR</span>
+                <div class="bg-gray-900/50 border border-gray-900 p-4 rounded-xl space-y-2">
+                    <h4 class="text-xs font-bold text-gray-500 font-mono uppercase tracking-wider">Isolated HW Schematic [cite: 217]</h4>
+                    <div class="aspect-video bg-gray-950 rounded-lg overflow-hidden border border-gray-900 flex items-center justify-center">
+                        <img src="plugsense_schematic.png" alt="Plug Sense Circuit Schematic" class="object-contain w-full h-full hover:scale-105 transition duration-300">
                     </div>
-                    <h4 class="text-xs font-bold tracking-widest text-gray-400 mb-4 uppercase">Simulated Endpoint Telemetry Monitor</h4>
-                    
-                    <div class="grid grid-cols-3 gap-4 mb-6">
-                        <div class="bg-gray-950 p-4 rounded-lg border border-gray-800">
-                            <span class="text-[10px] text-gray-500">MEASURED VOLTAGE</span>
-                            <div class="text-xl font-mono font-bold text-white">5.02 V</div>
-                        </div>
-                        <div class="bg-gray-950 p-4 rounded-lg border border-gray-800">
-                            <span class="text-[10px] text-gray-500">CURRENT DRAW (mA)</span>
-                            <div id="ps-current" class="text-xl font-mono font-bold text-cyan-400">0.00 mA</div>
-                        </div>
-                        <div class="bg-gray-950 p-4 rounded-lg border border-gray-800">
-                            <span class="text-[10px] text-gray-500">FINGERPRINT MATCH</span>
-                            <div id="ps-match" class="text-xl font-mono font-bold text-emerald-400">IDLE</div>
-                        </div>
+                </div>
+                <div class="bg-gray-900/50 border border-gray-900 p-4 rounded-xl space-y-2">
+                    <h4 class="text-xs font-bold text-gray-500 font-mono uppercase tracking-wider">Production Dashboard SS [cite: 242]</h4>
+                    <div class="aspect-video bg-gray-950 rounded-lg overflow-hidden border border-gray-900 flex items-center justify-center">
+                        <img src="plugsense_dash.png" alt="Plug Sense Streamlit Dashboard" class="object-contain w-full h-full hover:scale-105 transition duration-300">
                     </div>
+                </div>
+            </div>
 
-                    <div class="bg-gray-950 p-4 rounded-lg border border-gray-800 h-40 flex flex-col justify-end relative overflow-hidden">
-                        <div class="absolute top-2 left-2 text-[10px] text-gray-600 font-mono">Live Side-Channel Power Consumption Signature (mA)</div>
-                        <div id="ps-waveform" class="flex items-end justify-between h-28 gap-[2px] pt-4">
+            <div class="grid lg:grid-cols-12 gap-8 bg-gray-900/20 border border-gray-900 p-6 rounded-2xl">
+                <div class="lg:col-span-8 space-y-4">
+                    <h4 class="text-lg font-bold text-white tracking-wide">Technical Design Specifications</h4>
+                    <p class="text-sm text-gray-400 leading-relaxed">
+                        Universal Serial Bus (USB) ports are highly vulnerable to hardware-based impersonation attacks like "BadUSB." [cite: 32, 62] Attackers spoof standard digital descriptors (Vendor ID/Product ID), tricking operating systems into trusting the device[cite: 61, 75, 81]. PLUG SENSE implements physical-layer validation by mapping out the direct current (DC) signature of connected loads[cite: 34, 67].
+                    </p>
+                    <ul class="space-y-3 text-xs text-gray-300 list-disc pl-5">
+                        <li><strong>Edge Layer Acquisition:</strong> An ESP32 dual-core processor executes a buffered sampling cycle via its internal 12-bit ADC, reading the isolated analog output of an ACS712-05B Hall-Effect sensor module[cite: 35, 164, 165, 191, 196].</li>
+                        <li><strong>Galvanic Isolation Protection:</strong> The physical wiring topology routes the cut VBUS (+5V) line directly through the sensor's internal copper conduction path, preserving the Data+ and Data- lines untouched while providing up to 2.1 kVRMS electrical isolation[cite: 201, 207, 209].</li>
+                        <li><strong>TinyML Engine:</strong> Embedded neural network classifier trained via Edge Impulse[cite: 36, 119]. The model classifies complex time-series current patterns at a 10 Hz telemetry interval[cite: 36, 119, 264].</li>
+                        <li><strong>Microservices Architecture:</strong> The ESP32 pushes serialized JSON payloads via Wi-Fi (HTTP POST) to a Dockerized server running a pythonic REST API and Streamlit user interface[cite: 36, 118, 150, 151].</li>
+                    </ul>
+                </div>
+                <div class="lg:col-span-4 bg-gray-950 p-6 rounded-xl border border-gray-900 flex flex-col justify-between">
+                    <div class="space-y-4">
+                        <h5 class="text-xs font-bold text-gray-400 font-mono uppercase tracking-widest">Experimental Results [cite: 257]</h5>
+                        <div class="space-y-3">
+                            <div class="flex justify-between border-b border-gray-900 pb-1 text-xs">
+                                <span class="text-gray-400">Idle Port</span>
+                                <span class="text-emerald-400 font-mono">0 mA (IDLE) [cite: 268]</span>
                             </div>
+                            <div class="flex justify-between border-b border-gray-900 pb-1 text-xs">
+                                <span class="text-gray-400">PC Cooling Fan</span>
+                                <span class="text-emerald-400 font-mono">46.60 mA (PC FAN) [cite: 272]</span>
+                            </div>
+                            <div class="flex justify-between border-b border-gray-900 pb-1 text-xs">
+                                <span class="text-gray-400">Powerbank</span>
+                                <span class="text-emerald-400 font-mono">1330 mA (POWERBANK) [cite: 276, 277]</span>
+                            </div>
+                            <div class="flex justify-between border-b border-gray-900 pb-1 text-xs">
+                                <span class="text-gray-400">Smartphone</span>
+                                <span class="text-emerald-400 font-mono">1740 mA (PHONE) [cite: 280, 281]</span>
+                            </div>
+                        </div>
                     </div>
-
-                    <div class="mt-4 flex justify-between items-center text-xs text-gray-500">
-                        <span>Status: <strong class="text-emerald-400">Passive NILM Monitoring</strong></span>
-                        <span>Confidence Score: <strong id="ps-confidence" class="text-cyan-400">100%</strong></span>
-                    </div>
+                    <div class="pt-4 border-t border-gray-900 text-[10px] text-gray-500 font-mono">Tested successfully on Windows/Linux environments via Docker[cite: 178].</div>
                 </div>
             </div>
         </section>
 
-        <section class="space-y-6">
+        <section class="space-y-6 border-t border-gray-900 pt-12">
             <div class="flex items-center gap-3">
                 <span class="bg-amber-500/10 text-amber-400 p-2 rounded-lg border border-amber-500/20">
                     <i class="fa-solid fa-solar-panel text-xl"></i>
                 </span>
                 <div>
-                    <h3 class="text-2xl font-bold text-white">2. SolarX: AI-Supervised Dual-Axis Solar Tracker ☀️</h3>
-                    <p class="text-sm text-gray-400">A smart solar panel tracker that optimizes mechanical wear versus expected optical energy yield.</p>
+                    <h3 class="text-2xl font-bold text-white">2. SolarX: AI-Supervised Dual-Axis Solar Tracking System [cite: 349]</h3>
+                    <p class="text-sm text-gray-400 font-mono">Energy-Aware Smart Autopilot & Closed-Loop Actuator Supervisor [cite: 352, 353]</p>
                 </div>
             </div>
 
-            <div class="grid lg:grid-cols-12 gap-8">
-                <div class="lg:col-span-5 bg-gray-900 border border-gray-800 p-6 rounded-xl flex flex-col justify-between space-y-6">
-                    <div class="space-y-4">
-                        <p class="text-gray-300 text-sm leading-relaxed">
-                            Rather than blindly rotating toward any transient glare (which degrades servos), **SolarX** integrates an intelligent AI supervisory dashboard over an Arduino Nano motor matrix. It dynamically runs boundary constraints, cable-stress checks, and shadow optimization, calculating exactly whether moving is worth the physical expenditure.
-                        </p>
-                        <div class="border-l-2 border-amber-500 pl-4 py-1 text-xs text-gray-400 space-y-1">
-                            <p><strong>Hardware Array:</strong> Arduino Nano, 4 Corner LDRs, 2 Mechanical Hobby Servo Motors.</p>
-                            <p><strong>Decisions:</strong> MOVE, SLOW AUTO, HOLD POSITION, and DIFFUSE HOLD based on light stability.</p>
-                        </div>
-                    </div>
-                    <div class="grid grid-cols-2 gap-4 pt-4 border-t border-gray-800 text-center">
-                        <div>
-                            <div class="text-xs text-gray-500">SAFETY RANGE</div>
-                            <div class="text-lg font-bold text-amber-400">75° - 105°</div>
-                        </div>
-                        <div>
-                            <div class="text-xs text-gray-500">SCAN PROFILE</div>
-                            <div class="text-lg font-bold text-amber-400">3x3 Grid</div>
-                        </div>
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="bg-gray-900/50 border border-gray-900 p-4 rounded-xl space-y-2">
+                    <h4 class="text-xs font-bold text-gray-500 font-mono uppercase tracking-wider">System Architecture & Command Protocol [cite: 513, 515]</h4>
+                    <div class="aspect-video bg-gray-950 rounded-lg overflow-hidden border border-gray-900 flex items-center justify-center">
+                        <img src="solarx_block.png" alt="SolarX Architecture" class="object-contain w-full h-full hover:scale-105 transition duration-300">
                     </div>
                 </div>
-
-                <div class="lg:col-span-7 bg-gray-900 border border-amber-500/30 p-6 rounded-xl relative">
-                    <div class="absolute top-4 right-4 flex items-center gap-2">
-                        <span class="w-2 h-2 rounded-full bg-amber-500 animate-ping"></span>
-                        <span class="text-[10px] tracking-wider text-amber-400 font-bold uppercase">LIVE SIMULATOR</span>
+                <div class="bg-gray-900/50 border border-gray-900 p-4 rounded-xl space-y-2">
+                    <h4 class="text-xs font-bold text-gray-500 font-mono uppercase tracking-wider">Production Heatmap & Dashboard Control [cite: 608]</h4>
+                    <div class="aspect-video bg-gray-950 rounded-lg overflow-hidden border border-gray-900 flex items-center justify-center">
+                        <img src="solarx_dash.png" alt="SolarX Dashboard Heatmap" class="object-contain w-full h-full hover:scale-105 transition duration-300">
                     </div>
-                    <h4 class="text-xs font-bold tracking-widest text-gray-400 mb-4 uppercase">Simulated AI Autopilot & Optimizer</h4>
+                </div>
+            </div>
 
-                    <div class="grid grid-cols-4 gap-2 mb-6 text-center">
-                        <div class="bg-gray-950 p-2 rounded border border-gray-800">
-                            <span class="text-[9px] text-gray-500">TOP-LEFT LDR</span>
-                            <div id="ldr-tl" class="text-sm font-mono font-bold text-white">--</div>
-                        </div>
-                        <div class="bg-gray-950 p-2 rounded border border-gray-800">
-                            <span class="text-[9px] text-gray-500">TOP-RIGHT LDR</span>
-                            <div id="ldr-tr" class="text-sm font-mono font-bold text-white">--</div>
-                        </div>
-                        <div class="bg-gray-950 p-2 rounded border border-gray-800">
-                            <span class="text-[9px] text-gray-500">BOT-LEFT LDR</span>
-                            <div id="ldr-bl" class="text-sm font-mono font-bold text-white">--</div>
-                        </div>
-                        <div class="bg-gray-950 p-2 rounded border border-gray-800">
-                            <span class="text-[9px] text-gray-500">BOT-RIGHT LDR</span>
-                            <div id="ldr-br" class="text-sm font-mono font-bold text-white">--</div>
-                        </div>
-                    </div>
-
-                    <div class="grid grid-cols-3 gap-4 mb-6">
-                        <div class="bg-gray-950 p-4 rounded-lg border border-gray-800">
-                            <span class="text-[10px] text-gray-500">HORIZONTAL ANGLE</span>
-                            <div id="sx-h" class="text-xl font-mono font-bold text-white">90°</div>
-                        </div>
-                        <div class="bg-gray-950 p-4 rounded-lg border border-gray-800">
-                            <span class="text-[10px] text-gray-500">VERTICAL ANGLE</span>
-                            <div id="sx-v" class="text-xl font-mono font-bold text-white">90°</div>
-                        </div>
-                        <div class="bg-gray-950 p-4 rounded-lg border border-gray-800">
-                            <span class="text-[10px] text-gray-500">AI OPTIMIZER DECISION</span>
-                            <div id="sx-decision" class="text-sm font-mono font-bold text-amber-400">HOLD POSITION</div>
-                        </div>
-                    </div>
-
-                    <div class="bg-gray-950 p-4 rounded-lg border border-gray-800 flex flex-col items-center justify-center space-y-2">
-                        <div class="text-[10px] text-gray-500 font-mono">Simulated 3x3 Calibration Heatmap Score Chart (Corrected Light Score: 1023 - avgLight)</div>
-                        <div class="grid grid-cols-3 gap-2 w-48">
-                            <div id="cell-0" class="h-10 w-10 md:h-12 md:w-12 bg-amber-950/20 border border-amber-900/40 rounded flex items-center justify-center text-xs font-mono text-amber-500">--</div>
-                            <div id="cell-1" class="h-10 w-10 md:h-12 md:w-12 bg-amber-950/20 border border-amber-900/40 rounded flex items-center justify-center text-xs font-mono text-amber-500">--</div>
-                            <div id="cell-2" class="h-10 w-10 md:h-12 md:w-12 bg-amber-950/20 border border-amber-900/40 rounded flex items-center justify-center text-xs font-mono text-amber-500">--</div>
-                            <div id="cell-3" class="h-10 w-10 md:h-12 md:w-12 bg-amber-950/20 border border-amber-900/40 rounded flex items-center justify-center text-xs font-mono text-amber-500">--</div>
-                            <div id="cell-4" class="h-10 w-10 md:h-12 md:w-12 bg-amber-950/20 border border-amber-900/40 rounded flex items-center justify-center text-xs font-mono text-amber-500">--</div>
-                            <div id="cell-5" class="h-10 w-10 md:h-12 md:w-12 bg-amber-950/20 border border-amber-900/40 rounded flex items-center justify-center text-xs font-mono text-amber-500">--</div>
-                            <div id="cell-6" class="h-10 w-10 md:h-12 md:w-12 bg-amber-950/20 border border-amber-900/40 rounded flex items-center justify-center text-xs font-mono text-amber-500">--</div>
-                            <div id="cell-7" class="h-10 w-10 md:h-12 md:w-12 bg-amber-950/20 border border-amber-900/40 rounded flex items-center justify-center text-xs font-mono text-amber-500">--</div>
-                            <div id="cell-8" class="h-10 w-10 md:h-12 md:w-12 bg-amber-950/20 border border-amber-900/40 rounded flex items-center justify-center text-xs font-mono text-amber-500">--</div>
+            <div class="grid lg:grid-cols-12 gap-8 bg-gray-900/20 border border-gray-900 p-6 rounded-2xl">
+                <div class="lg:col-span-8 space-y-4">
+                    <h4 class="text-lg font-bold text-white tracking-wide">Technical Design Specifications</h4>
+                    <p class="text-sm text-gray-400 leading-relaxed">
+                        Typical solar tracking platforms blindly orient toward the brightest light, risking excessive mechanical jitter, high cable strain, and battery drain under unstable skies[cite: 399, 427, 428]. **SolarX** introduces a high-level, energy-aware supervisory AI dashboard that acts on top of a deterministic real-time firmware layer[cite: 352, 353, 403].
+                    </p>
+                    <ul class="space-y-3 text-xs text-gray-300 list-disc pl-5">
+                        <li><strong>Low-Level Execution:</strong> An Arduino Nano reads analog levels from four-corner LDR sensor dividers, calculating left-right and top-bottom gradients to adjust horizontal and vertical hobby servo angles within a calibrated safe physical range of 75° to 105°[cite: 350, 351, 541].</li>
+                        <li><strong>Corrected Light Scoring:</strong> Due to inverted resistor characteristics of the physical LDR voltage divider, the supervisory layer converts the raw average light readings to true, linear brightness[cite: 471, 472, 554]:
+                            <div class="my-2 text-center text-sm">
+                                $$B = 1023 - \text{avgLight} \quad [cite: 556, 559]$$
+                            </div>
+                        </li>
+                        <li><strong>AI Autopilot & Net Energy Optimizer:</strong> Compares optical yield expectations directly with actuator stress metrics[cite: 355, 636]. The supervisor computes movement costs, cable-strain fatigue, and shadow risks before deciding to issue commands[cite: 355, 636]:
+                            <div class="my-2 text-center text-sm">
+                                $$\text{Net Benefit} = \text{Expected Light Gain} - \text{Movement Cost} \quad [cite: 641]$$
+                            </div>
+                        </li>
+                        <li><strong>Cable-Safe AI Scan:</strong> Initiates a structured 3x3 sweep over safe 82°, 90°, and 98° grid intersections, displaying an instant 2D brightness heatmap and executing a closed-loop positioning return to the absolute optimal coordinate[cite: 562, 628, 629].</li>
+                    </ul>
+                </div>
+                <div class="lg:col-span-4 bg-gray-950 p-6 rounded-xl border border-gray-900 flex flex-col justify-between">
+                    <div class="space-y-4">
+                        <h5 class="text-xs font-bold text-gray-400 font-mono uppercase tracking-widest">Control Protocol Commands [cite: 407, 570]</h5>
+                        <div class="space-y-2 text-xs font-mono text-gray-300">
+                            <p class="border-b border-gray-900 pb-1"><strong class="text-amber-400">AUTO:</strong> Classical closed-loop LDR-based tracking[cite: 571].</p>
+                            <p class="border-b border-gray-900 pb-1"><strong class="text-amber-400">STOP:</strong> Forces active hold, keeping serial telemetry streaming[cite: 571].</p>
+                            <p class="border-b border-gray-900 pb-1"><strong class="text-amber-400">CENTER:</strong> Sweeps both servos instantly to reference 90°[cite: 571].</p>
+                            <p class="border-b border-gray-900 pb-1"><strong class="text-amber-400">AI AUTOPILOT:</strong> Enables supervisor energy optimizations[cite: 615].</p>
+                            <p class="border-b border-gray-900 pb-1"><strong class="text-amber-400">GOTO,H,V:</strong> Positions actuators to requested coordinates[cite: 571].</p>
                         </div>
                     </div>
+                    <div class="pt-4 border-t border-gray-900 text-[10px] text-gray-500 font-mono">Telemetry serialized via JSON and transferred at 115200 baud[cite: 351, 435].</div>
                 </div>
             </div>
         </section>
 
-        <section class="space-y-6">
+        <section class="space-y-6 border-t border-gray-900 pt-12">
             <div class="flex items-center gap-3">
                 <span class="bg-cyan-500/10 text-cyan-400 p-2 rounded-lg border border-cyan-500/20">
                     <i class="fa-solid fa-vial-virus text-xl"></i>
                 </span>
                 <div>
-                    <h3 class="text-2xl font-bold text-white">3. Professional USB-UART & ST-Link V2.1 Multi-Tool 🔌</h3>
-                    <p class="text-sm text-gray-400">A high-fidelity R&D test board combining full hardware flow control serial bridges with micro-architecture flashing engines.</p>
+                    <h3 class="text-2xl font-bold text-white">3. Professional USB-UART & ST-Link V2.1 Flashing Engine</h3>
+                    <p class="text-sm text-gray-400 font-mono">Multi-Layer Hardware Debug Module featuring PNP Software Re-Enumeration</p>
                 </div>
             </div>
 
-            <div class="grid lg:grid-cols-12 gap-8">
-                <div class="lg:col-span-5 bg-gray-900 border border-gray-800 p-6 rounded-xl flex flex-col justify-between space-y-6">
-                    <div class="space-y-4">
-                        <p class="text-gray-300 text-sm leading-relaxed">
-                            This modular PCB interface was crafted for rapid hardware debugging. It incorporates an industry-standard serial link alongside a full-featured STM32 programmer. A custom PNP-driven re-enumeration network eliminates the physical need to unplug and replug target controllers during flash loops, streamlining iterative firmware deployments.
-                        </p>
-                        <div class="border-l-2 border-cyan-500 pl-4 py-1 text-xs text-gray-400 space-y-1">
-                            <p><strong>Silicon:</strong> FT232RL (UART Bridge), STM32F103C8T6 (ARM Cortex-M3).</p>
-                            <p><strong>Power Architecture:</strong> USB Type-C input with CC1/CC2 pull-down detection, reverse polarity protection, and a dual 3.3V/5V variable VCCIO level jumper.</p>
-                        </div>
-                    </div>
-                    <div class="grid grid-cols-2 gap-4 pt-4 border-t border-gray-800 text-center">
-                        <div>
-                            <div class="text-xs text-gray-500">LOGIC LEVEL</div>
-                            <div class="text-lg font-bold text-cyan-400">3.3V / 5V</div>
-                        </div>
-                        <div>
-                            <div class="text-xs text-gray-500">INTERFACE</div>
-                            <div class="text-lg font-bold text-cyan-400">USB Type-C</div>
-                        </div>
+            <div class="grid md:grid-cols-4 gap-6">
+                <div class="bg-gray-900/50 border border-gray-900 p-4 rounded-xl space-y-2">
+                    <h4 class="text-xs font-bold text-gray-500 font-mono uppercase tracking-wider">FT232RL Schematic Layer</h4>
+                    <div class="aspect-video bg-gray-950 rounded-lg overflow-hidden border border-gray-900 flex items-center justify-center">
+                        <img src="debugger_ft232.png" alt="FT232RL Schematic" class="object-contain w-full h-full hover:scale-105 transition duration-300">
                     </div>
                 </div>
+                <div class="bg-gray-900/50 border border-gray-900 p-4 rounded-xl space-y-2">
+                    <h4 class="text-xs font-bold text-gray-500 font-mono uppercase tracking-wider">STM32 ST-Link Core</h4>
+                    <div class="aspect-video bg-gray-950 rounded-lg overflow-hidden border border-gray-900 flex items-center justify-center">
+                        <img src="debugger_stlink.png" alt="STM32 ST-Link Schematic" class="object-contain w-full h-full hover:scale-105 transition duration-300">
+                    </div>
+                </div>
+                <div class="bg-gray-900/50 border border-gray-900 p-4 rounded-xl space-y-2">
+                    <h4 class="text-xs font-bold text-gray-500 font-mono uppercase tracking-wider">2D PCB Routing Layout</h4>
+                    <div class="aspect-video bg-gray-950 rounded-lg overflow-hidden border border-gray-900 flex items-center justify-center">
+                        <img src="pcb.png" alt="PCB Layout Routing" class="object-contain w-full h-full hover:scale-105 transition duration-300">
+                    </div>
+                </div>
+                <div class="bg-gray-900/50 border border-gray-900 p-4 rounded-xl space-y-2">
+                    <h4 class="text-xs font-bold text-gray-500 font-mono uppercase tracking-wider">3D PCB Physical Render</h4>
+                    <div class="aspect-video bg-gray-950 rounded-lg overflow-hidden border border-gray-900 flex items-center justify-center">
+                        <img src="3d.png" alt="PCB 3D Render" class="object-contain w-full h-full hover:scale-105 transition duration-300">
+                    </div>
+                </div>
+            </div>
 
-                <div class="lg:col-span-7 bg-gray-900 border border-cyan-500/30 p-6 rounded-xl flex flex-col justify-between">
-                    <div>
-                        <h4 class="text-xs font-bold tracking-widest text-gray-400 mb-4 uppercase">PCB Layer Architecture Details</h4>
-                        
-                        <div class="space-y-4">
-                            <div class="flex items-start gap-3 bg-gray-950 p-3 rounded border border-gray-800">
-                                <div class="bg-cyan-500/10 p-2 rounded text-cyan-400"><i class="fa-solid fa-code-branch"></i></div>
-                                <div class="text-xs">
-                                    <h5 class="font-bold text-white">Full-Flow Control USB-UART Layer (FT232RL)</h5>
-                                    <p class="text-gray-400">Brings out standard TX/RX plus CTS, RTS, DTR, DSR, DCD, and RI lines to header pins, turning this module into a comprehensive tool for validating hardware-level communications.</p>
-                                </div>
-                            </div>
-                            <div class="flex items-start gap-3 bg-gray-950 p-3 rounded border border-gray-800">
-                                <div class="bg-emerald-500/10 p-2 rounded text-emerald-400"><i class="fa-solid fa-bolt"></i></div>
-                                <div class="text-xs">
-                                    <h5 class="font-bold text-white">Re-Enumeration (RENUM) Switching Subsystem</h5>
-                                    <p class="text-gray-400">Leverages a PNP transistor configuration controlled by STM32's PA15 pin to programmatically pulse the 1.5kΩ pull-up on USB D+ line, letting the operating system reset connection profiles without manual disconnect.</p>
-                                </div>
-                            </div>
-                            <div class="flex items-start gap-3 bg-gray-950 p-3 rounded border border-gray-800">
-                                <div class="bg-amber-500/10 p-2 rounded text-amber-400"><i class="fa-solid fa-terminal"></i></div>
-                                <div class="text-xs">
-                                    <h5 class="font-bold text-white">Advanced SWD Debug & printf Stream (SWO)</h5>
-                                    <p class="text-gray-400">Routes the Serial Wire Output (SWO) alongside default clock/reset SWD pins to the target output header, unlocking rapid telemetry reporting and non-invasive trace inspection.</p>
-                                </div>
-                            </div>
+            <div class="grid lg:grid-cols-12 gap-8 bg-gray-900/20 border border-gray-900 p-6 rounded-2xl">
+                <div class="lg:col-span-8 space-y-4">
+                    <h4 class="text-lg font-bold text-white tracking-wide">Technical Design Specifications</h4>
+                    <p class="text-sm text-gray-400 leading-relaxed">
+                        An advanced, production-grade R&D engineering debug tool integrating dual high-speed protocol interfaces on a single PCB layout. The board combines an industry-standard serial link with a dedicated flashing and trace debugger core.
+                    </p>
+                    <ul class="space-y-3 text-xs text-gray-300 list-disc pl-5">
+                        <li><strong>FT232RL USB-UART Layer:</strong> Dedicated industrial USB bridge engine. Provides dual-rail VCCIO options (3.3V / 5V) via JP1 jumpers to support a diverse variety of target logics. All major flow control lines (RTS, CTS, DTR, DSR, DCD, RI) are broken out directly to header pins for hardware debugging.</li>
+                        <li><strong>STM32 ST-Link V2.1 Layer:</strong> Armed with an STM32F103C8T6 ARM Cortex-M3 processor. Connects to the host PC via a robust USB Type-C connector equipped with 5.1kΩ pull-down resistors on CC1/CC2 lines for safe negotiation of 5V VBUS power delivery.</li>
+                        <li><strong>Software Re-Enumeration Subsystem:</strong> Avoids physical cable wear during programming cycles. Instead of manually unplugging, the STM32 toggles PA15 (RENUM) to trigger a PNP transistor, software-resetting the 1.5kΩ pull-up resistor on the USB D+ line, causing the host OS to instantly reconnect the programmer.</li>
+                        <li><strong>SWD Target Debug Header:</strong> In addition to SWCLK, SWDIO, and target NRST reset lines, the output interface breaks out the SWO (Serial Wire Output) pin, unlocking active tracing capabilities and high-speed non-invasive telemetry extraction.</li>
+                    </ul>
+                </div>
+                <div class="lg:col-span-4 bg-gray-950 p-6 rounded-xl border border-gray-900 flex flex-col justify-between">
+                    <div class="space-y-4">
+                        <h5 class="text-xs font-bold text-gray-400 font-mono uppercase tracking-widest">Hardware Safety Stack</h5>
+                        <div class="space-y-2 text-xs text-gray-300">
+                            <p class="border-b border-gray-900 pb-1"><strong>EMI Filtering:</strong> 10µF & 100nF decoupling arrays on power inputs.</p>
+                            <p class="border-b border-gray-900 pb-1"><strong>Polarity Protection:</strong> PMOS-driven reverse current block on Type-C VBUS.</p>
+                            <p class="border-b border-gray-900 pb-1"><strong>Power Regulation:</strong> Fixed 3.3V output via LM1117-3.3V LDO regulator.</p>
+                            <p class="border-b border-gray-900 pb-1"><strong>Status Feedback:</strong> Board-mounted hardware LEDs mapping TX/RX pulses.</p>
                         </div>
                     </div>
-                    <div class="text-[10px] text-gray-500 font-mono mt-4 text-right">Optimized Layout Routing | Production Ready</div>
+                    <div class="pt-4 border-t border-gray-900 text-[10px] text-gray-500 font-mono">Designed, routed, and fully validated for R&D lab usage.</div>
                 </div>
             </div>
         </section>
 
     </main>
 
-    <footer class="bg-gray-900 border-t border-gray-800 py-12">
-        <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6 text-sm text-gray-500">
+    <footer class="bg-gray-950 border-t border-gray-900 py-12">
+        <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6 text-sm text-gray-500 font-mono">
             <div>
-                <p>&copy; 2026 Hasan Emre Çelik. Designed as a modular engineering portfolio.</p>
+                <p>&copy; 2026 Hasan Emre Çelik. All engineering designs and documentation are self-produced.</p>
             </div>
             <div class="flex gap-4">
                 <a href="https://github.com/hasane073" class="hover:text-white transition"><i class="fa-brands fa-github text-lg"></i></a>
@@ -315,116 +289,5 @@
         </div>
     </footer>
 
-    <script>
-        // ------------------ PLUG SENSE SIMULATOR ------------------
-        const psStates = [
-            { name: 'IDLE', current: 0.0, confidence: 100, pattern: 'flat' },
-            { name: 'PC FAN', current: 46.60, confidence: 87, pattern: 'inductive' },
-            { name: 'POWERBANK', current: 1330.00, confidence: 67, pattern: 'stable' },
-            { name: 'PHONE CHARGE', current: 1740.00, confidence: 99, pattern: 'dynamic' }
-        ];
-        let stateIndex = 0;
-        const psWaveform = document.getElementById('ps-waveform');
-        
-        // Generate initial chart bars
-        for(let i=0; i < 40; i++) {
-            const bar = document.createElement('div');
-            bar.className = "w-2 bg-emerald-500/40 rounded-t transition-all duration-300";
-            bar.style.height = "10%";
-            psWaveform.appendChild(bar);
-        }
-
-        function updatePlugSenseSim() {
-            const state = psStates[stateIndex];
-            document.getElementById('ps-match').innerText = state.name;
-            document.getElementById('ps-confidence').innerText = state.confidence + '%';
-            
-            // Jitter current dynamically
-            let currentJitter = state.current;
-            if (state.current > 0) {
-                currentJitter += (Math.random() - 0.5) * (state.current * 0.05);
-            }
-            document.getElementById('ps-current').innerText = currentJitter.toFixed(2) + ' mA';
-
-            // Update bar heights based on pattern
-            const bars = psWaveform.getElementsByTagName('div');
-            for(let i=0; i < bars.length; i++) {
-                let h = 5; // Default minimal noise
-                if (state.pattern === 'inductive') {
-                    h = 25 + Math.sin(i * 0.8) * 10 + Math.random() * 15;
-                } else if (state.pattern === 'stable') {
-                    h = 75 + Math.random() * 5;
-                } else if (state.pattern === 'dynamic') {
-                    h = 50 + Math.sin(i * 0.3) * 20 + Math.random() * 25;
-                }
-                bars[i].style.height = Math.min(100, Math.max(5, h)) + '%';
-                // Highlight color if drawing high power
-                if (state.current > 1000) {
-                    bars[i].className = "w-2 bg-cyan-500 rounded-t transition-all duration-300";
-                } else if (state.current > 0) {
-                    bars[i].className = "w-2 bg-emerald-500 rounded-t transition-all duration-300";
-                } else {
-                    bars[i].className = "w-2 bg-gray-800 rounded-t transition-all duration-300";
-                }
-            }
-
-            stateIndex = (stateIndex + 1) % psStates.length;
-        }
-
-        // ------------------ SOLARX SIMULATOR ------------------
-        const decisions = ['MOVE', 'SLOW AUTO', 'HOLD POSITION', 'DIFFUSE HOLD'];
-        
-        function updateSolarXSim() {
-            // Simulated LDR raw analog values
-            const ldrTL = Math.floor(600 + Math.random() * 150);
-            const ldrTR = Math.floor(620 + Math.random() * 150);
-            const ldrBL = Math.floor(580 + Math.random() * 150);
-            const ldrBR = Math.floor(590 + Math.random() * 150);
-
-            document.getElementById('ldr-tl').innerText = ldrTL;
-            document.getElementById('ldr-tr').innerText = ldrTR;
-            document.getElementById('ldr-bl').innerText = ldrBL;
-            document.getElementById('ldr-br').innerText = ldrBR;
-
-            // Simulated angles within safety thresholds (75-105)
-            const hAngle = Math.floor(82 + Math.random() * 16);
-            const vAngle = Math.floor(82 + Math.random() * 16);
-            document.getElementById('sx-h').innerText = hAngle + '°';
-            document.getElementById('sx-v').innerText = vAngle + '°';
-
-            // Update Decision Card
-            const currentDec = decisions[Math.floor(Math.random() * decisions.length)];
-            const decEl = document.getElementById('sx-decision');
-            decEl.innerText = currentDec;
-            if (currentDec === 'MOVE') {
-                decEl.className = "text-sm font-mono font-bold text-emerald-400";
-            } else if (currentDec === 'HOLD POSITION') {
-                decEl.className = "text-sm font-mono font-bold text-amber-400";
-            } else {
-                decEl.className = "text-sm font-mono font-bold text-cyan-400";
-            }
-
-            // Update heatmap values dynamically with mock corrected scores
-            for(let i=0; i < 9; i++) {
-                const cell = document.getElementById('cell-' + i);
-                const score = Math.floor(70 + Math.random() * 25);
-                cell.innerText = score + '%';
-                // Adjust colors based on score
-                if (score > 85) {
-                    cell.className = "h-10 w-10 md:h-12 md:w-12 bg-amber-500 text-gray-950 border border-amber-400 rounded flex items-center justify-center text-xs font-mono font-bold transition-all";
-                } else if (score > 75) {
-                    cell.className = "h-10 w-10 md:h-12 md:w-12 bg-amber-600/50 text-white border border-amber-500/70 rounded flex items-center justify-center text-xs font-mono transition-all";
-                } else {
-                    cell.className = "h-10 w-10 md:h-12 md:w-12 bg-amber-950/20 text-amber-500/70 border border-amber-900/30 rounded flex items-center justify-center text-xs font-mono transition-all";
-                }
-            }
-        }
-
-        // Run Loops
-        setInterval(updatePlugSenseSim, 2500);
-        setInterval(updateSolarXSim, 1500);
-        updatePlugSenseSim();
-        updateSolarXSim();
-    </script>
 </body>
 </html>
