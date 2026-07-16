@@ -6,9 +6,6 @@
     <title>Hasan Emre Çelik - Engineering Portfolio</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
-    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
-    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js" onload="renderMathInElement(document.body);"></script>
     <script>
         tailwind.config = {
             darkMode: 'class',
@@ -121,23 +118,23 @@
                 </div>
                 <div class="lg:col-span-4 bg-gray-950 p-6 rounded-xl border border-gray-900 flex flex-col justify-between">
                     <div class="space-y-4">
-                        <h5 class="text-xs font-bold text-gray-400 font-mono uppercase tracking-widest">Experimental Results</h5>
+                        <h5 class="text-xs font-bold text-gray-400 font-mono uppercase tracking-widest">Target Waveform Fingerprints</h5>
                         <div class="space-y-3">
                             <div class="flex justify-between border-b border-gray-900 pb-1 text-xs">
                                 <span class="text-gray-400">Idle Port</span>
-                                <span class="text-emerald-400 font-mono">0 mA (IDLE)</span>
+                                <span class="text-emerald-400 font-mono">Flat baseline with minimal thermal noise</span>
                             </div>
                             <div class="flex justify-between border-b border-gray-900 pb-1 text-xs">
                                 <span class="text-gray-400">PC Cooling Fan</span>
-                                <span class="text-emerald-400 font-mono">46.60 mA (PC FAN)</span>
+                                <span class="text-emerald-400 font-mono">High-frequency inductive ripple motor noise</span>
                             </div>
                             <div class="flex justify-between border-b border-gray-900 pb-1 text-xs">
                                 <span class="text-gray-400">Powerbank</span>
-                                <span class="text-emerald-400 font-mono">1330 mA (POWERBANK)</span>
+                                <span class="text-emerald-400 font-mono">Stable, block-like capacitive charging pattern</span>
                             </div>
                             <div class="flex justify-between border-b border-gray-900 pb-1 text-xs">
                                 <span class="text-gray-400">Smartphone</span>
-                                <span class="text-emerald-400 font-mono">1740 mA (PHONE)</span>
+                                <span class="text-emerald-400 font-mono">Dynamic draw with sharp PMIC transient spikes</span>
                             </div>
                         </div>
                     </div>
@@ -254,21 +251,21 @@
                         An advanced, production-grade R&D engineering debug tool integrating dual high-speed protocol interfaces on a single PCB layout. The board combines an industry-standard serial link with a dedicated flashing and trace debugger core.
                     </p>
                     <ul class="space-y-3 text-xs text-gray-300 list-disc pl-5">
-                        <li><strong>USB-UART Layer (FT232RL):</strong> Engineered around the industrial FT232RL (U1) USB bridge chip. Includes a physical jumper (JP1) for manual VCCIO selection (3.3V or 5V) to match target system logic. The Micro USB input (J1) power rail integrates 10µF (C5) and 100nF (C1) filtering capacitors to suppress voltage ripple. CBUS0 and CBUS1 lines route directly to TX/RX status LEDs (D2, D3), and full hardware flow control signals (RTS, CTS, DTR, DSR, DCD, RI) are exposed to output headers (J2, J3, J4).</li>
-                        <li><strong>ST-Link V2.1 Layer (STM32F103C8T6):</strong> Employs an STM32F103C8T6 (U4) ARM Cortex-M3 microcontroller. Features an integrated USB Type-C connector (J5) with 5.1kΩ pull-down resistors (R5, R6) on CC1 and CC2 lines to signal sink device behavior and negotiate safe 5V power routing.</li>
-                        <li><strong>USB Re-Enumeration Subsystem:</strong> Avoids manual cable detachment during intense flashing loops. The design incorporates a PNP transistor (Q2) configured to toggle the 1.5kΩ pull-up resistor (R14) on the USB D+ line, dynamically driven via the STM32's PA15 (RENUM) pin.</li>
-                        <li><strong>Power & Output Interfaces:</strong> Clock frequency is driven by an 8 MHz crystal (Y1) with standard 20pF load capacitors (C11, C12). Power protection features a MOSFET (Q1) and a protection diode (D4) on the VBUS line for reverse polarity and overcurrent protection, regulated down to 3.3V via an LM1117-3.3V (U3) LDO with 10µF (C4, C8) stabilizing caps. The J7 SWD programming header exposes SWCLK, SWDIO, NRST, SWO (Serial Wire Output) for tracing, and UART target lines (TX/RX).</li>
+                        <li><strong>USB-UART Layer (FT232RL):</strong> Engineered around the industrial FT232RL (U1) USB bridge chip. Includes a physical 3-pin jumper (JP1) for manual VCCIO selection (3.3V or 5V) to match target system logic. The Mini USB input (J1) power rail integrates a 0Ω series protection resistor (R1), a power status LED (D1) with a 1kΩ series resistor (R2), and decoupling capacitors: 100nF (C1) and 10µF (C2) to suppress voltage ripple. FT232RL's 3V3OUT pin features a 1µF (C3) dekuplaj capacitor. CBUS0 and CBUS1 lines route to TX/RX status LEDs (D2, D3) through 1kΩ resistors (R3, R4), and full hardware flow control signals are exposed to expansion headers J3 (Conn_01x09).</li>
+                        <li><strong>ST-Link V2.1 Layer (STM32F103C8T6):</strong> Employs an STM32F103C8T6 (U4) ARM Cortex-M3 processor. Features an integrated USB Type-C connector J5 (USB_C_Receptacle_PowerOnly_6P) equipped with 5.1kΩ pull-down resistors (R5, R6) on CC1 and CC2 lines to signal sink device behavior. VBUS input line features an IRLML6402 PMOS (Q1) and a Schottky diode (D4) for reverse polarity protection. The digital data lines (USB_P/USB_N) feature a TPD2EUSB30A (U2) ESD protection array.</li>
+                        <li><strong>USB Re-Enumeration Subsystem:</strong> Employs a BC817 NPN transistor (Q2) connected between the +3V3 rail and the USB_P (D+) line via a 1kΩ resistor (R7). The transistor's base bacaği is controlled by the STM32's PA15 (RENUM) pin via a 100Ω series resistor (R11), biased by a 10kΩ pull-up (R9) to +5V and a 36kΩ pull-down (R10) to GND to dynamically trigger software-reset cycles.</li>
+                        <li><strong>Clock, Reset, & Power Regulation:</strong> The main 3.3V rail is supplied by an LD1117S12TR_SOT223 (U3) LDO regulator, stabilized with 10µF capacitors on both input (C4) and output (C8), with the output rail (+3V3) decoupled using four parallel 100nF capacitors (C5, C6, C7, C9). The STM32's clock is driven by an 8 MHz crystal (Q3) with 20pF load capacitors (C11, C12). The NRST pin is pulled up to +3V3 via a 100kΩ resistor (RB) with a 100nF (C10) capacitor to GND, while BOOT0 is tied to GND via a 100kΩ pulldown (R12). Features an RGB LED (D5) driven through 220Ω resistors (R18, R19), and a 3-pin power selection jumper (JP2) with 4k7 resistors (R16, R17).</li>
                     </ul>
                 </div>
                 <div class="lg:col-span-4 bg-gray-950 p-6 rounded-xl border border-gray-900 flex flex-col justify-between">
                     <div class="space-y-4">
                         <h5 class="text-xs font-bold text-gray-400 font-mono uppercase tracking-widest">Hardware Architecture Specs</h5>
                         <div class="space-y-2 text-xs text-gray-300 font-mono">
-                            <p class="border-b border-gray-900 pb-1"><strong>Filtering Caps:</strong> 10µF (C5) & 100nF (C1) on USB Input.</p>
-                            <p class="border-b border-gray-900 pb-1"><strong>Pull-Down Resistors:</strong> R5, R6 (5.1kΩ) on Type-C CC1/CC2.</p>
-                            <p class="border-b border-gray-900 pb-1"><strong>Re-Enumeration:</strong> R14 (1.5kΩ) switched via Q2 (PA15).</p>
-                            <p class="border-b border-gray-900 pb-1"><strong>Protection Array:</strong> MOSFET (Q1) & Protection Diode (D4).</p>
-                            <p class="border-b border-gray-900 pb-1"><strong>Voltage Regulation:</strong> LM1117-3.3V (U3) LDO with 10µF (C4, C8).</p>
+                            <p class="border-b border-gray-900 pb-1"><strong>VBUS Filter Caps:</strong> 100nF (C1) & 10µF (C2) on Mini USB.</p>
+                            <p class="border-b border-gray-900 pb-1"><strong>CC1/CC2 Pull-Downs:</strong> R5, R6 (5.1kΩ) on Type-C J5.</p>
+                            <p class="border-b border-gray-900 pb-1"><strong>Re-Enumeration NPN:</strong> Q2 (BC817) & Emitter R7 (1kΩ).</p>
+                            <p class="border-b border-gray-900 pb-1"><strong>Base Drive network:</strong> R11 (100Ω), R9 (10kΩ), R10 (36kΩ).</p>
+                            <p class="border-b border-gray-900 pb-1"><strong>Voltage Regulation:</strong> LD1117S12TR (U3) with 10µF (C4, C8).</p>
                         </div>
                     </div>
                     <div class="pt-4 border-t border-gray-900 text-[10px] text-gray-500 font-mono">Designed, routed, and validated in KiCad.</div>
